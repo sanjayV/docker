@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <main>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <a class="btn btn-primary" (click)="getTasksList('pending')">Pending</a>
+                        <a class="btn btn-primary" (click)="getTasksList('overdue')">Overdue</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <a class="btn btn-primary pull-right" routerLink="/add">Add task</a>
+                    </div>
+                </div>
+            </div>       
+        
+            <div class="scroll">
+                <table cellpadding="0" cellspacing="0" border="1" width="100%" class="add-task">
+                    <thead>
+                        <tr>
+                            <th class="name">Name</th>
+                            <th class="due-date">Due Date</th>
+                            <th class="priority">Priority</th>
+                            <th class="action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let todos of (todoListData  | datePipe:todoListData:taskStatus)">
+                            <td>{{todos.name}}</td>
+                            <td class="due-date">{{todos.dueDate | date:'MM-dd-yyyy'}}</td>
+                            <td class="priority">{{todos.priority}}</td>
+                            <td class="action"><a [routerLink]="['/add/'+todos._id]">Update</a><a (click)="deleteTodo(todos._id)">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>

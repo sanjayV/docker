@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 *ngIf="!todoId">Add todo</h1>
+            <h1 *ngIf="todoId">Edit todo</h1>
+        </div>
+        <form [formGroup]="todoForm" id="form-validation" name="form-validation" (submit)="onSubmit()">
+            <div class="row form-group" >
+                <label class="col-md-3" for="name"><strong>Name</strong><span>*</span></label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" formControlName="name" placeholder="Enter name" id="todo_name">
+                </div>
+                <div *ngIf="!todoForm.controls.name.valid && submitAttempt" class="form-control-error">
+                    <ul>
+                        <li>Please enter name</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row form-group" >
+                <label class="col-md-3 col-form-label" for="name"><strong>Due Date</strong><span>*</span></label>
+                <div class="col-md-9">
+                    <ng2-datepicker [options]="options" formControlName="dueDate"></ng2-datepicker>
+                </div>
+                <div *ngIf="!todoForm.controls.dueDate.valid && submitAttempt" class="form-control-error">
+                    <ul>
+                        <li>Please enter date</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row form-group" >
+                <label class="col-md-3 col-form-label" for="name"><strong>Priority</strong><span>*</span></label>
+                <div class="col-md-9">
+                    <select class="form-control" id="priority" formControlName="priority">
+                        <option disabled="disabled" value="">Please select</option>
+                        <option *ngFor="let priority of _constants.priorities" [value]="priority">{{priority}}</option>
+                    </select>
+                </div>
+                <div *ngIf="!todoForm.controls.priority.valid && submitAttempt" class="form-control-error">
+                    <ul>
+                        <li>Please select priority</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row form-group" >
+                <label class="col-md-3 col-form-label" for="name"><strong>Description</strong><span></span></label>
+                <div class="col-md-9">
+                    <textarea class="form-control" name="description" rows="8" cols="80" formControlName="description" id= "description"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <div class="form-group row">
+                    <div class="col-md-9 col-md-offset-3">
+                        <button *ngIf="!todoId" type="submit" class="btn btn-success yuma-cursor-pointer">Save</button>
+                        <button *ngIf="todoId" type="submit" class="btn btn-success yuma-cursor-pointer">Update</button>
+                        <a class="btn btn-primary" routerLink="/">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

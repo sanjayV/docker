@@ -1,0 +1,73 @@
+main{
+    display:block;
+    margin:40px auto;
+    max-width:1220px;
+}
+.add-task{
+    width:100%;
+    margin-bottom:20px;
+    border-collapse:collapse;
+    border:1px solid #e1e1e1;
+}
+.add-task tr th,
+.add-task tr td{
+    padding:5px 10px;
+    border-color:#e1e1e1;
+}
+.add-task tr th{
+    padding:10px;
+    background-color:#bfbfbf;
+}
+.add-task tbody tr{
+    background-color:#fff;
+}
+.add-task tbody tr:nth-child(odd){
+    background-color:#ececec;
+}
+.add-task .name{
+    width:150px;
+    min-width:150px;
+    max-width:150px;
+    text-align:left;
+}
+.add-task .due-date{
+    width:100px;
+    min-width:100px;
+    max-width:100px;
+}
+.add-task .priority{
+    width:100px;
+    min-width:100px;
+    max-width:100px;
+}
+.add-task .action{
+    width:175px;
+    min-width:175px;
+    max-width:175px;
+    text-align:left;
+}
+.add-task .action a{
+    display:inline-block;
+    padding:3px 10px;
+    background-color: #337ab7;
+    border:1px solid #2e6da4;
+    color:#fff;
+    margin:0 5px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.add-task .action a:hover,
+.add-task .action a:active,
+.add-task .action a:focus{
+    text-decoration: none;
+    background-color: #286090;
+    border:1px solid #2e6da4;
+}
+@media(max-width:768px){
+    .scroll{
+        display:block;
+        overflow:auto;
+        max-width:100%;
+    }
+}

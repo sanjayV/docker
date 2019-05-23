@@ -1,0 +1,6 @@
+[submodule "todos-api"]
+	path = todos-api
+	url = https://github.com/sanjayRanosys/todos-api.git
+[submodule "todos-fe"]
+	path = todos-fe
+	url = https://github.com/sanjayRanosys/todos-fe.git
