@@ -5,7 +5,7 @@
   "dependencies": {
     "bunyan": "^0.22.1",
     "restify": "^4.0.4",
-    "mongoose": "^4.7.9"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "jasmine-node": "1.14.5",
