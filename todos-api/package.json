@@ -8,8 +8,8 @@
     "mongoose": "^4.7.9"
   },
   "devDependencies": {
-    "jasmine-node": "1.14.5",
-    "jshint": "2.9.2"
+    "jasmine-node": "1.16.2",
+    "jshint": "2.13.5"
   },
   "scripts": {
     "start": "node index.js",
